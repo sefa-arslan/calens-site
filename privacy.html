@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calens Privacy Policy</title>
+    <style>
+      :root { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif; color: #111116; background: #f6f6f7; }
+      body { margin: 0; }
+      main { max-width: 820px; margin: 0 auto; padding: 52px 24px 80px; }
+      h1 { font-size: clamp(34px, 7vw, 56px); line-height: 1; letter-spacing: 0; margin: 0 0 8px; }
+      h2 { font-size: 22px; margin-top: 34px; }
+      p, li { color: #4f5057; font-size: 16px; line-height: 1.62; }
+      a { color: #111116; font-weight: 700; text-underline-offset: 4px; }
+      .card { background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 22px; padding: 26px; margin-top: 26px; box-shadow: 0 12px 40px rgba(0,0,0,.05); }
+      .muted { color: #73747c; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a href="/">Calens</a>
+      <h1>Privacy Policy</h1>
+      <p class="muted">Last updated: September 12, 2026</p>
+      <div class="card">
+        <p>Calens V1 defaults to local-first operation. In that mode, no Calens cloud account is required: profile details, goals, meal entries, progress logs, and saved photos remain in the app's local storage. This policy distinguishes those on-device features from separately configured online services.</p>
+        <h2>Information You Provide</h2>
+        <p>You may enter profile and planning details, meal items, portions, nutrition values, notes, and progress information. You can also save photos for supported local features. In the default local-first mode these records are stored on your device and are not uploaded to a Calens account. Support opens your chosen mail app; Calens does not receive message contents unless you choose to send an email.</p>
+        <h2>Health and Fitness Data</h2>
+        <p>If you enable Apple Health in Settings and grant permission, the current user-facing integration reads active energy and body mass for on-device activity context and optional weight import. The permission request is read-only; the default Settings flow does not request permission to write Health data. You can change Health access in iOS Settings or Apple Health. Health values are not sent to Calens servers in local-first mode.</p>
+        <h2>Food Lookup and Photos</h2>
+        <p>Barcode lookup sends the barcode needed for a product search and standard request metadata to Open Food Facts. Food-label text recognition runs on device; you review and confirm a draft before it is saved. Barcode and label information may be incomplete or outdated, so review and edit it. Open Food Facts data is subject to its published licenses, including attribution and share-alike terms for reused database material. Photo-based meal estimates are unavailable in the default local-first V1 mode; Calens does not send meal photos to an AI service in that mode.</p>
+        <h2>App Privacy Summary</h2>
+        <p>Calens does not use data for cross-app tracking. The app privacy manifest declares tracking as false and lists data categories needed to describe included SDK capabilities. A manifest declaration is not, by itself, evidence that every category is transmitted in the default configuration. Final App Store privacy answers must match the signed app, its included SDK privacy manifests, and the services actually enabled in that build.</p>
+        <h2>Purchases</h2>
+        <p>If you use an in-app purchase, Apple handles App Store billing and transaction processing. RevenueCat processes purchase and entitlement information, including its app-user identifier, to provide purchase status and restore functionality. In local-first mode this purchase identifier is separate from your on-device profile; Calens does not use it to upload or identify your local meals. Apple and RevenueCat may retain records under their own terms and legal obligations.</p>
+        <h2>Separately Configured Online Services</h2>
+        <p>Some Calens builds can be configured for Firebase services, but this is not the default local-first V1 configuration. When a build is explicitly configured for Firebase, account and content data may be sent to Firebase Authentication, Firestore, Functions, and Storage for the selected feature. Remote photo analysis, if separately enabled and presented with an explicit consent choice, sends the selected photo and optional details for processing. Do not infer that these optional flows are active in the default build. Firebase Analytics and Crashlytics collection is disabled by default and is enabled only when the Firebase backend is explicitly configured. The exact services and data depend on that build's configuration and the choices shown in the app.</p>
+        <h2>Analytics and Diagnostics</h2>
+        <p>In the default local-first configuration, Firebase is not initialized and Firebase Analytics and Crashlytics collection are disabled. In a separately configured Firebase build, those services can process bounded product events or crash/diagnostic information. Calens does not attach meal details, Health values, photo content, payment credentials, provider tokens, or Apple credentials to those events or reports.</p>
+        <h2>Subscriptions</h2>
+        <p>In-app purchases are managed through Apple and the App Store. Any price, renewal, cancellation, or refund terms shown by Apple at purchase control the transaction. Deleting local Calens data does not cancel an App Store subscription; manage it through your Apple account.</p>
+        <h2>Retention</h2>
+        <p>Local-first content remains in the app container until you remove it with Delete local data or remove the app. Separately configured Firebase builds follow their selected server deletion and provider retention behavior. Apple and RevenueCat may retain purchase records under their own legal, accounting, and support requirements.</p>
+        <h2>Your Choices and Requests</h2>
+        <p>In local-first mode, use Delete local data in Settings to remove app-owned records and photos. A separately configured Firebase account can use the account deletion flow. To prevent stale credentials from recreating deleted server data, that flow retains a raw-UID deletion block for no more than 24 hours and a server-only SHA-256 marker for no more than 72 hours. These minimal markers contain no profile, meal, or Health content and are removed by trusted cleanup after their stated limits. Temporary export files are owner-only, are removed from this device after sharing finishes or is cancelled, and server export artifacts are cleaned up after expiry. Cleanup failures are surfaced for retry rather than treated as success.</p>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:calens.support@gmail.com">calens.support@gmail.com</a></p>
+      </div>
+    </main>
+  </body>
+</html>
