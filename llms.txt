@@ -1,0 +1,36 @@
+# Calens
+
+> Calens is an iPhone calorie and macro counter: snap a meal for an AI nutrition breakdown, check every ingredient, or scan a barcode or food label.
+
+## Key pages
+- [AI info](https://calens.oda.so/ai-info): verified facts and limitations
+- [Features](https://calens.oda.so/features)
+- [Support](https://calens.oda.so/support)
+- [Privacy](https://calens.oda.so/privacy)
+- [Terms](https://calens.oda.so/terms)
+
+## Facts
+- Platform: iPhone, iOS 17 or later. Made for adults aged 18 and older.
+- AI meal photo analysis: take a photo or pick one from the photo library. The AI identifies the ingredients with their amounts and returns calories, protein, carbs, fat, fiber, sugar, saturated fat and sodium.
+- Optional notes before analysis, such as “+olive oil” or “about 250 g”, help the AI account for hidden ingredients and portion size.
+- Ingredient editor: every result lists its ingredients. Users can change a quantity, replace or remove an ingredient, or search for and add one the camera missed; the nutrition totals recalculate automatically before saving.
+- Nutrition notes on each meal flag values such as high sugar, sodium or saturated fat, or low protein or fiber, with a short suggestion.
+- Barcode lookup for packaged food through the Open Food Facts database. If a product is missing, users can scan its nutrition label or enter the details manually.
+- Nutrition-label scanning reads a printed Nutrition Facts panel with on-device text recognition; the user reviews the values before saving.
+- Personal daily calorie and macro target calculated from age, sex at birth, height, weight, activity level, goal (lose, maintain or gain weight) and chosen pace. The target can be adjusted anytime.
+- Home screen: calories left, macros eaten and every meal logged today.
+- Food diary: day-by-day history with date-range and meal-name filters, a library of saved and recent meals to add again, and shareable PDF nutrition reports for periods from one day to one year.
+- Progress: weight log against the goal weight with a trend chart, a day streak, and before-and-after progress photos compared side by side.
+- Apple Health (optional, read-only): active energy, workouts, steps, exercise minutes and weight, used to show daily activity and calories burned and to import weight entries. Health data stays on the device.
+- No account or sign-up. Profile, meals, photos and progress are stored on the iPhone; Settings offers export of a copy and deletion of all local data.
+- A meal photo, with any optional note, is sent for analysis (through Firebase Functions to Google Vertex AI) only after the user taps Analyze. It is discarded after the analysis and not stored on a server.
+- App analytics (Firebase Analytics) receive event names and simple counts only; meal details, photos, notes, profile data and Health values are never sent to analytics.
+- Languages: English, Arabic, Chinese (Traditional), Dutch, French, German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish and Turkish, switchable inside the app.
+- Food data credit: Open Food Facts (ODbL).
+
+## Limitations
+- AI results are estimates, not lab measurements. Portion size and hidden fats are the hardest to judge, which is why Calens lets users review and edit every result before saving.
+- AI photo analysis and barcode lookup need an internet connection; nutrition-label scanning and the saved diary work on the device.
+- Calens is not a medical device and does not give medical advice.
+- iPhone only; no Android, iPad or web version.
+- Data lives on one iPhone: there is no cloud sync between devices. Users can export a copy from Settings.

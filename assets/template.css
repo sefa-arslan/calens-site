@@ -1,0 +1,230 @@
+/* calens-original — original design from the app's own language:
+   iOS grouped canvas + white 16 px cards, scan viewfinder corners, macro colors,
+   food-label rules, calorie ring, paywall dark glow. Asymmetric, left-aligned rhythm. */
+.tpl-calens-original{--c-bg:var(--c-grouped);--card:#fff;--r-tile:16px;--gap:24px}
+.tpl-calens-original h2{font-size:clamp(1.8rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-0.03em}
+.co-head{margin-bottom:40px;max-width:640px}
+.co-head--left{text-align:start}
+
+/* ---------- Hero: copy left, one phone inside a viewfinder, result readout ---------- */
+.co-hero{padding:48px 0 96px;overflow:hidden}
+.co-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,96px);align-items:center}
+.co-kicker{display:inline-flex;align-items:center;gap:10px;margin:0 0 24px;font-size:.88rem;font-weight:700;color:var(--c-ink)}
+.co-kicker-dot{width:10px;height:10px;border-radius:3px;background:var(--c-accent2);box-shadow:0 0 0 5px color-mix(in srgb,var(--c-accent2) 22%,transparent)}
+.co-title{font-size:clamp(2.2rem,6.6vw,5.6rem);overflow-wrap:break-word;hyphens:manual;font-weight:800;letter-spacing:-0.045em;line-height:.98;margin-bottom:28px}
+.co-title-accent{display:inline-block;position:relative;padding-bottom:.16em}
+.co-macro-bar{position:absolute;inset-inline-start:0;inset-inline-end:0;bottom:0;height:.12em;display:flex;gap:.06em}
+.co-macro-bar i{display:block;border-radius:99px}
+.co-macro-bar i:nth-child(1){flex:57;background:var(--c-protein)}
+.co-macro-bar i:nth-child(2){flex:56;background:var(--c-carbs)}
+.co-macro-bar i:nth-child(3){flex:20;background:var(--c-fat)}
+.co-sub{font-size:clamp(1.08rem,1.6vw,1.3rem);color:var(--c-ink-soft);max-width:30em;margin-bottom:32px}
+.co-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.co-link{font-weight:700;text-decoration-thickness:2px;text-underline-offset:5px;min-height:44px;display:inline-flex;align-items:center}
+.co-facts{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;border-top:1px solid var(--c-hairline)}
+.co-facts li{padding:14px 20px 0 0;margin-inline-end:20px;font-size:.88rem;font-weight:600;color:var(--c-ink-soft);border-inline-end:1px solid var(--c-hairline)}
+.co-facts li:last-child{border-inline-end:0}
+
+.co-hero-visual{position:relative;justify-self:center;width:min(330px,72vw)}
+.co-frame{position:relative;width:100%;padding:36px 30px}
+.co-hero-phone{width:100%;box-shadow:0 50px 80px -40px rgba(11,11,15,.45)}
+.co-viewfinder{position:absolute;inset:0;pointer-events:none}
+.co-viewfinder i{position:absolute;width:56px;height:56px;border:4px solid var(--c-ink);border-radius:4px}
+.co-viewfinder i:nth-child(1){top:0;inset-inline-start:0;border-inline-end:0;border-bottom:0;border-start-start-radius:18px}
+.co-viewfinder i:nth-child(2){top:0;inset-inline-end:0;border-inline-start:0;border-bottom:0;border-start-end-radius:18px}
+.co-viewfinder i:nth-child(3){bottom:0;inset-inline-start:0;border-inline-end:0;border-top:0;border-end-start-radius:18px}
+.co-viewfinder i:nth-child(4){bottom:0;inset-inline-end:0;border-inline-start:0;border-top:0;border-end-end-radius:18px}
+.co-readout{position:absolute;inset-inline-start:-28%;bottom:14%;width:220px;background:var(--card);border-radius:var(--r-tile);padding:16px 18px 12px;box-shadow:0 24px 50px -20px rgba(11,11,15,.35),0 0 0 1px rgba(11,11,15,.04)}
+.co-readout-kcal{margin:0 0 10px;font-size:.9rem;color:var(--c-ink-soft)}
+.co-readout-kcal strong{font-size:2rem;letter-spacing:-0.03em;color:var(--c-ink);margin-inline-end:2px}
+.co-readout ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.co-readout li{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;padding-inline-start:16px;position:relative}
+.co-readout li::before{content:"";position:absolute;inset-inline-start:0;width:8px;height:8px;border-radius:2px}
+.co-readout li.m-protein::before{background:var(--c-protein)}
+.co-readout li.m-carbs::before{background:var(--c-carbs)}
+.co-readout li.m-fat::before{background:var(--c-fat)}
+.co-readout-note{margin:10px 0 0;font-size:.75rem;line-height:1.35;color:var(--c-ink-muted)}
+@media (prefers-reduced-motion:no-preference){
+  .co-viewfinder{animation:focus 1.1s cubic-bezier(.3,.7,.2,1) both}
+  .co-readout{animation:readout .6s .9s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes focus{0%{opacity:0;transform:scale(1.14)}60%{opacity:1;transform:scale(.98)}100%{transform:scale(1)}}
+  @keyframes readout{from{opacity:0;translate:0 18px}to{opacity:1;translate:0 0}}
+}
+
+/* ---------- How it works: staircase of cards with cropped screens ---------- */
+.co-how{padding:24px 0 96px}
+.co-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);align-items:start}
+.co-step{background:var(--card);border-radius:var(--r-tile);padding:12px 12px 24px}
+.co-step--1{margin-top:48px}
+.co-step--2{margin-top:96px}
+.co-step-crop{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--c-grouped)}
+.co-step-crop img{width:100%;height:100%;object-fit:cover}
+.co-crop-scan img{object-position:50% 40%}
+.co-crop-result img{object-position:50% 38%}
+.co-crop-home img{object-position:50% 22%}
+.co-step-text{padding:20px 12px 0}
+.co-step-n{display:block;font-size:.8rem;font-weight:800;letter-spacing:.14em;color:var(--c-accent-ink);margin-bottom:8px;font-variant-numeric:tabular-nums}
+.co-step h3{font-size:1.2rem;font-weight:800}
+.co-step p{margin:0;color:var(--c-ink-soft)}
+
+/* ---------- Inside the app: bento of six white tiles ---------- */
+.co-bento-sec{padding:24px 0 96px}
+.co-bento{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:270px;gap:16px}
+.co-tile{position:relative;overflow:hidden;background:var(--card);border-radius:var(--r-tile);padding:24px}
+.co-tile-text{position:relative;z-index:1;max-width:30ch}
+.co-tile h3{font-size:1.1rem;font-weight:800;margin-bottom:6px}
+.co-tile p{font-size:.9rem;color:var(--c-ink-soft);margin:0}
+.co-tile-phone{position:absolute;width:190px}
+.co-tile--0{grid-column:span 2;grid-row:span 2;background:var(--c-dark);color:#F5F5F7}
+.co-tile--0::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 80% 90%,color-mix(in srgb,var(--c-accent) 45%,transparent),transparent 70%)}
+.co-tile--0 p{color:var(--c-dark-ink-soft)}
+.co-tile--0 h3{font-size:1.6rem}
+.co-tile--0 .co-tile-phone{width:250px;inset-inline-end:8%;bottom:-120px;transform:rotate(-7deg)}
+.co-tile--1{grid-column:span 2}
+.co-tile--1 .co-tile-text{max-width:45%}
+.co-tile--1 .co-tile-phone{inset-inline-end:24px;top:24px;width:180px}
+.co-tile--2 .co-tile-phone,.co-tile--3 .co-tile-phone{width:160px;inset-inline:0;margin-inline:auto;bottom:-262px}
+.co-tile--2 p,.co-tile--3 p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.co-tile--3 .co-tile-phone{transform:rotate(5deg)}
+.co-tile--4,.co-tile--5{grid-column:span 2}
+.co-tile--4 .co-tile-text,.co-tile--5 .co-tile-text{max-width:48%}
+.co-tile--4 .co-tile-phone{inset-inline-end:32px;top:30px;width:175px;transform:rotate(-4deg)}
+.co-tile--5 .co-tile-phone{inset-inline-end:40px;top:40px;width:175px}
+
+/* ---------- Trust: plain list + food-label style "Privacy Facts" ---------- */
+.co-trust{padding:24px 0 96px;display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(32px,6vw,96px);align-items:start}
+.co-trust-list{list-style:none;padding:0;margin:28px 0 0}
+.co-trust-list li{padding:20px 0;border-top:1px solid var(--c-hairline)}
+.co-trust-list h3{font-size:1.1rem;font-weight:800;margin-bottom:4px}
+.co-trust-list p{margin:0;color:var(--c-ink-soft)}
+.co-label{background:#fff;color:#0B0B0F;border:2px solid #0B0B0F;padding:10px 14px 6px;font-size:.92rem}
+.co-label-title{margin:0;font-size:2rem;font-weight:800;letter-spacing:-0.03em;line-height:1.05;border-bottom:1px solid #0B0B0F;padding-bottom:4px}
+.co-label-sub{margin:4px 0 0;padding-bottom:6px;border-bottom:10px solid #0B0B0F;font-size:.85rem}
+.co-label-row{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid #0B0B0F}
+.co-label-row:last-child{border-bottom:5px solid #0B0B0F}
+.co-label-row span{font-weight:700}
+.co-label-row b{font-weight:800;text-align:end}
+
+/* ---------- FAQ: sticky side + single divided list ---------- */
+.co-faq{padding:24px 0 96px;display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,96px);align-items:start}
+.co-faq-side{position:sticky;top:96px}
+.co-help{margin-top:28px;padding:20px;border-radius:var(--r-tile);background:var(--card)}
+.co-help p{font-size:.92rem;color:var(--c-ink-soft);margin-bottom:8px}
+.co-help a{display:inline-flex;align-items:center;min-height:44px;font-weight:800}
+
+/* ---------- Closing: paywall-dark card with calorie ring ---------- */
+.co-end{padding:0 0 96px}
+.co-end-card{position:relative;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;background:var(--c-dark);color:#F5F5F7;border-radius:28px;padding:clamp(32px,5vw,64px)}
+.co-end-card::before{content:"";position:absolute;inset:0;background:radial-gradient(45% 70% at 15% 0%,color-mix(in srgb,var(--c-accent) 50%,transparent),transparent 70%),radial-gradient(35% 60% at 95% 100%,color-mix(in srgb,var(--c-accent2) 30%,transparent),transparent 70%);pointer-events:none}
+.co-end-copy{position:relative}
+.co-end-copy h2{color:#F5F5F7}
+.co-end-copy p{color:var(--c-dark-ink-soft);margin-bottom:24px}
+.co-cta-dark.is-pending{color:#F5F5F7;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6)}
+.co-cta-dark.is-live{background:#F5F5F7;color:var(--c-dark)}
+.co-end-ring{position:relative;justify-self:end;width:min(400px,100%)}
+.co-ring-fig{margin:0;display:grid;grid-template-columns:170px 1fr;gap:28px;align-items:center}
+.co-ring-legend{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.co-ring-legend li{display:flex;justify-content:space-between;gap:12px;font-size:.92rem;padding-inline-start:16px;position:relative;color:var(--c-dark-ink-soft)}
+.co-ring-legend li b{color:#F5F5F7}
+.co-ring-legend li::before{content:"";position:absolute;inset-inline-start:0;top:.5em;width:8px;height:8px;border-radius:2px}
+.co-ring-legend .m-protein::before{background:var(--c-protein)}
+.co-ring-legend .m-carbs::before{background:var(--c-carbs)}
+.co-ring-legend .m-fat::before{background:var(--c-fat)}
+.co-ring-cap{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--c-dark-hairline);font-weight:700;color:#F5F5F7}
+.co-ring-cap span{display:block;font-weight:500;font-size:.78rem;color:rgba(255,255,255,.52)}
+.ring{width:100%;height:auto;display:block}
+.ring-track{fill:none;stroke:rgba(255,255,255,.1);stroke-width:14}
+.ring-arc{fill:none;stroke-width:14;stroke-linecap:round;transform:rotate(-90deg);transform-origin:100px 100px}
+.ring-arc.m-protein{stroke:var(--c-protein)}
+.ring-arc.m-carbs{stroke:var(--c-carbs)}
+.ring-arc.m-fat{stroke:var(--c-fat)}
+.ring-big{font:800 52px var(--font-display);fill:#F5F5F7;letter-spacing:-2px}
+.ring-sub{font:600 16px var(--font-body);fill:rgba(255,255,255,.64)}
+@media (prefers-reduced-motion:no-preference){.ring{animation:spinIn 1.2s .2s cubic-bezier(.3,.7,.2,1) both}@keyframes spinIn{from{opacity:0;transform:rotate(-60deg) scale(.9)}}}
+
+/* ---------- Phone composition (not a scaled desktop) ---------- */
+@media (max-width:900px){
+  .co-hero-grid,.co-trust,.co-faq,.co-end-card{grid-template-columns:1fr}
+  .co-hero{padding-top:28px}
+  .co-hero-visual{width:min(280px,70vw);margin-top:8px}
+  .co-readout{inset-inline-start:auto;inset-inline-end:-14%;bottom:-6%;width:190px}
+  .co-facts{grid-template-columns:1fr;border-top:0}
+  .co-facts li{border-inline-end:0;border-top:1px solid var(--c-hairline);padding:10px 0;margin:0}
+  .co-steps{grid-template-columns:1fr;gap:16px}
+  .co-step--1,.co-step--2{margin-top:0}
+  .co-step{display:grid;grid-template-columns:110px 1fr;gap:4px;align-items:center;padding:10px}
+  .co-step-crop{aspect-ratio:1}
+  .co-step-text{padding:4px 8px}
+  .co-bento{grid-template-columns:1fr 1fr;grid-auto-rows:240px;gap:12px}
+  .co-tile--0{grid-column:span 2;grid-row:span 2}
+  .co-tile--1,.co-tile--4,.co-tile--5{grid-column:span 2}
+  .co-tile{padding:18px}
+  .co-tile--2 .co-tile-phone,.co-tile--3 .co-tile-phone{width:130px;bottom:-150px}
+  .co-tile--2 .co-tile-text,.co-tile--3 .co-tile-text{font-size:.9rem}
+  .co-tile--2 p,.co-tile--3 p{display:none}
+  .co-tile--1 .co-tile-phone,.co-tile--4 .co-tile-phone,.co-tile--5 .co-tile-phone{width:130px;inset-inline-end:16px;top:auto;bottom:-110px}
+  .co-tile--1 .co-tile-text,.co-tile--4 .co-tile-text,.co-tile--5 .co-tile-text{max-width:55%}
+  .co-tile--0 .co-tile-phone{width:200px;bottom:-90px}
+  .co-faq-side{position:static}
+  .co-end-ring{width:100%;justify-self:start}
+  .co-ring-fig{grid-template-columns:120px 1fr}
+  .co-dl-row{grid-template-columns:1fr;gap:4px}
+}
+
+/* Section labels: viewfinder corner + small caps, not a pill */
+.tpl-calens-original .eyebrow{background:none;box-shadow:none;padding:2px 0 0 14px;border-radius:0;position:relative;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:800;color:var(--c-accent-ink)}
+.tpl-calens-original .eyebrow::before{content:"";position:absolute;inset-inline-start:0;top:0;width:8px;height:8px;border-inline-start:2px solid currentColor;border-top:2px solid currentColor;border-start-start-radius:3px}
+
+/* At a glance: plain definition list for people and machine readers */
+.co-summary{padding:8px 0 96px}
+.co-dl{margin:0;background:var(--card);border-radius:var(--r-tile);padding:8px 28px}
+.co-dl-row{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--c-hairline)}
+.co-dl-row:last-child{border-bottom:0}
+.co-dl dt{font-weight:800}
+.co-dl dd{margin:0;color:var(--c-ink-soft)}
+@media (max-width:900px){.co-dl{padding:4px 18px}.co-dl-row{grid-template-columns:1fr;gap:4px;padding:14px 0}}
+
+/* Five-tile bento: one large tile + 2x2 small tiles */
+.co-bento--5 .co-tile:not(.co-tile--0){grid-column:span 1}
+.co-bento--5 .co-tile:not(.co-tile--0) .co-tile-text{max-width:none}
+.co-bento--5 .co-tile:not(.co-tile--0) p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.co-bento--5 .co-tile:not(.co-tile--0) .co-tile-phone{width:160px;inset-inline:0;margin-inline:auto;top:auto;bottom:-262px;transform:none}
+.co-bento--5 .co-tile--2 .co-tile-phone{transform:rotate(-4deg)}
+.co-bento--5 .co-tile--3 .co-tile-phone{transform:rotate(4deg)}
+@media (max-width:900px){.co-bento--5 .co-tile:not(.co-tile--0){grid-column:span 1}.co-bento--5 .co-tile:not(.co-tile--0) .co-tile-phone{width:130px;bottom:-150px}.co-bento--5 .co-tile:not(.co-tile--0) p{display:none}}
+
+/* Article pages use a calmer heading scale */
+.tpl-calens-original .article h2,.tpl-calens-original .graph-hub h2{font-size:clamp(1.3rem,2.2vw,1.65rem);margin-top:1.8em}
+.tpl-calens-original .article h1,.tpl-calens-original .graph-hub h1{font-size:clamp(2rem,4.4vw,3.2rem)}
+.tpl-calens-original .hub-card a,.tpl-calens-original .app-bridge,.tpl-calens-original .tool{background:var(--card)}
+
+/* ---- UI/UX review 2026-11-17 fixes ---- */
+/* M-06: the readout overlaps the phone edge by at most ~20% of its width and shows calorie shares, not the screenshot's numbers */
+.co-readout{inset-inline-start:auto;inset-inline-end:calc(100% - 30px - 44px);bottom:18%;width:220px}
+.co-readout-head{margin:0 0 6px;font-size:.75rem;font-weight:700;color:var(--c-ink-soft)}
+.co-readout li{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding-inline-start:16px}
+.co-readout li small{font-size:.75rem;color:var(--c-ink-soft);font-weight:600}
+.co-bar{grid-column:1/-1;display:block;height:4px;border-radius:2px;background:var(--c-hairline);overflow:hidden}
+.co-bar-fill{display:block;height:100%;border-radius:2px}
+.m-protein .co-bar-fill{background:var(--c-protein)}.m-carbs .co-bar-fill{background:var(--c-carbs)}.m-fat .co-bar-fill{background:var(--c-fat)}
+.co-w-0{width:0%}.co-w-5{width:5%}.co-w-10{width:10%}.co-w-15{width:15%}.co-w-20{width:20%}.co-w-25{width:25%}.co-w-30{width:30%}.co-w-35{width:35%}.co-w-40{width:40%}.co-w-45{width:45%}.co-w-50{width:50%}.co-w-55{width:55%}.co-w-60{width:60%}.co-w-65{width:65%}.co-w-70{width:70%}.co-w-75{width:75%}.co-w-80{width:80%}.co-w-85{width:85%}.co-w-90{width:90%}.co-w-95{width:95%}.co-w-100{width:100%}
+@media (max-width:900px){
+  .co-hero-visual{display:grid;justify-items:center;padding-bottom:0}
+  .co-readout{position:static;width:min(280px,100%);margin-top:20px;animation:none}
+}
+/* B-02: small screens and 200% text */
+@media (max-width:900px){
+  .co-facts{grid-template-columns:minmax(0,1fr)}
+  .co-dl-row{grid-template-columns:minmax(0,1fr)}
+  .co-step{grid-template-columns:96px minmax(0,1fr)}
+}
+.co-actions .store-cta{white-space:normal}
+/* P-02: bento tiles below 900 px keep a one-line description and less empty space */
+@media (max-width:900px){
+  .co-bento{grid-auto-rows:220px}
+  .co-bento--5 .co-tile:not(.co-tile--0) p{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;font-size:.8rem}
+  .co-bento--5 .co-tile:not(.co-tile--0) .co-tile-phone{bottom:-170px}
+}
+@media (max-width:420px){.co-bento{grid-template-columns:minmax(0,1fr)}.co-bento--5 .co-tile:not(.co-tile--0){grid-column:span 1}.co-tile--0{grid-column:span 1}}
+/* B-03: bright gradient only on the dark surfaces */
+.co-end-card,.co-tile--0{--c-ink-muted:rgba(255,255,255,.6)}

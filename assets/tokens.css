@@ -1,0 +1,31 @@
+/* generated from calens.site.prod.json — edit the config, not this file */
+@font-face{font-family:"Manrope";src:url("../fonts/manrope-var.woff2") format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Pacifico Wordmark";src:url("../fonts/pacifico-wordmark.woff2") format("woff2");font-display:block}
+:root{
+  --c-ink:#0B0B0F;
+  --c-ink-soft:#5E5E66;
+  --c-ink-muted:#6B6B73;
+  --c-bg:#FFFFFF;
+  --c-surface:#F5F5F7;
+  --c-hairline:#ECECF1;
+  --c-accent:#8B7BFF;
+  --c-accent2:#3FD1B4;
+  --c-accent3:#FFC773;
+  --c-accent-ink:#5B4BD6;
+  --c-panel:#BFF0E5;
+  --c-panel-ink:#0B2A24;
+  --c-dark:#07070C;
+  --c-dark-card:rgba(255,255,255,0.06);
+  --c-dark-hairline:rgba(255,255,255,0.12);
+  --c-dark-ink-soft:rgba(255,255,255,0.64);
+  --c-grouped:#F2F2F7;
+  --c-protein:#FF4D4F;
+  --c-carbs:#FF9F0A;
+  --c-fat:#3B82F6;
+  --c-accent2-ink:#0E7C68;
+  --font-display:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-body:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-wordmark:"Pacifico Wordmark",var(--font-display);
+  --r-card:24px;
+  --r-control:999px;
+}

@@ -1,33 +1,115 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calens</title>
-    <meta name="description" content="Calens support, privacy, and terms information.">
-    <style>
-      :root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif; color: #111116; background: #f6f6f7; }
-      body { margin: 0; }
-      main { max-width: 760px; margin: 0 auto; padding: 64px 24px; }
-      nav { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
-      a { color: #111116; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
-      h1 { font-size: clamp(40px, 9vw, 72px); line-height: 0.95; letter-spacing: 0; margin: 0; }
-      p { color: #5f6068; font-size: 18px; line-height: 1.55; max-width: 620px; }
-      section { background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 24px; padding: 28px; margin-top: 36px; box-shadow: 0 12px 40px rgba(0,0,0,.05); }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Calens</h1>
-      <p>Local-first calorie and meal tracking with editable logs and progress review.</p>
-      <nav>
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/terms">Terms of Use</a>
-        <a href="/support">Support</a>
-      </nav>
-      <section>
-        <p>For support, privacy, or local-data requests, contact <a href="mailto:calens.support@gmail.com">calens.support@gmail.com</a>.</p>
-      </section>
-    </main>
-  </body>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; script-src &#39;self&#39;; style-src &#39;self&#39;; img-src &#39;self&#39; data:; font-src &#39;self&#39;; connect-src &#39;self&#39;; manifest-src &#39;self&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calens: AI Calorie Counter from a Meal Photo</title>
+<meta name="description" content="Snap a meal and Calens shows its calories, protein, carbs, fat and fiber. Scan barcodes and food labels too. Your food log stays on your iPhone.">
+<link rel="canonical" href="https://calens.oda.so/">
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="application-name" content="Calens">
+<meta name="apple-mobile-web-app-title" content="Calens">
+<meta name="theme-color" content="#FFFFFF">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calens">
+<meta property="og:title" content="Calens: AI Calorie Counter from a Meal Photo">
+<meta property="og:description" content="Snap a meal and Calens shows its calories, protein, carbs, fat and fiber. Scan barcodes and food labels too. Your food log stays on your iPhone.">
+<meta property="og:url" content="https://calens.oda.so/">
+<meta property="og:image" content="https://calens.oda.so/assets/icons/logo-1024.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/icons/icon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="describedby" type="text/plain" href="llms.txt">
+<link rel="preload" href="fonts/manrope-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/template.css">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://calens.oda.so/#website","url":"https://calens.oda.so/","name":"Calens","inLanguage":"en","publisher":{"@id":"https://calens.oda.so/#org"}},{"@type":"Organization","@id":"https://calens.oda.so/#org","name":"Calens","url":"https://calens.oda.so/","logo":{"@type":"ImageObject","url":"https://calens.oda.so/assets/icons/logo-1024.png","width":1024,"height":1024},"email":"calens@oda.so"},{"@type":"SoftwareApplication","@id":"https://calens.oda.so/#app","name":"Calens","operatingSystem":"iOS 17 or later","applicationCategory":"HealthApplication","description":"Snap a meal and Calens shows its calories, protein, carbs, fat and fiber. Scan barcodes and food labels too. Your food log stays on your iPhone.","publisher":{"@id":"https://calens.oda.so/#org"},"featureList":["AI calorie and macro analysis from a meal photo","Ingredient editor with automatic nutrition recalculation","Barcode lookup","On-device nutrition-label scanning","Personal daily calorie and macro target","Food diary, saved meals and PDF nutrition reports","Weight, goal and streak tracking","Before-and-after progress photos","Optional Apple Health integration (activity, workouts, weight)","Food log stored on the device"],"inLanguage":["ar","de","en","es","fr","it","ja","ko","nl","pt-BR","tr","zh-Hant"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which devices does Calens support?","acceptedAnswer":{"@type":"Answer","text":"Calens is made for iPhone and runs on iOS 17 or later."}},{"@type":"Question","name":"Which languages does Calens support?","acceptedAnswer":{"@type":"Answer","text":"The app is available in English, Arabic, Chinese (Traditional), Dutch, French, German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish and Turkish. You can switch languages inside the app."}},{"@type":"Question","name":"Where are my meals and photos stored?","acceptedAnswer":{"@type":"Answer","text":"On your iPhone. Your profile, meals, photos and progress are saved in the app, not in a Calens account. You can export a copy or delete everything in Settings."}},{"@type":"Question","name":"What happens to my meal photo?","acceptedAnswer":{"@type":"Answer","text":"It leaves your iPhone only when you tap Analyze. The photo is sent for that one AI analysis and discarded afterward; it is not stored on a server. Barcode and label scans don’t need a meal photo."}},{"@type":"Question","name":"How accurate is the AI?","acceptedAnswer":{"@type":"Answer","text":"It does the heavy lifting, and you have the final say. Results are estimates, not lab measurements. Portions and hidden oil or sauce are the hardest to see, so Calens shows every ingredient it found and lets you change an amount or add what it missed before you save."}},{"@type":"Question","name":"Does Calens work with Apple Health?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you turn it on. With your permission, Calens reads active energy, workouts, steps, exercise minutes and weight to show your daily activity and calories burned. It only reads, never writes, and your Health data stays on your iPhone."}},{"@type":"Question","name":"Does Calens give medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. Calens helps you log food and follow your own goals. It does not diagnose or treat any condition."}},{"@type":"Question","name":"How do I get help?","acceptedAnswer":{"@type":"Answer","text":"Email calens@oda.so and include your iPhone model and iOS version."}}]}]}</script>
+</head>
+<body class="tpl-calens-original page-home">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap header-row">
+<a class="brand " href="/" aria-label="Calens home"><img class="brand-icon" src="assets/icons/app-icon.png" alt="" width="32" height="32"><span class="brand-word">Calens</span></a>
+<nav class="site-nav" aria-label="Primary"><a href="/features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a></nav>
+<details class="nav-menu"><summary aria-label="Menu"><span class="nav-menu-icon" aria-hidden="true"></span><span class="nav-menu-label">Menu</span></summary><nav aria-label="Primary (menu)"><a href="/features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a></nav></details>
+
+</div></header>
+<main id="main">
+
+<section class="co-hero">
+  <div class="wrap co-hero-grid">
+    <div class="co-hero-copy">
+      <p class="co-kicker"><span class="co-kicker-dot" aria-hidden="true"></span>Snap. Check. Done.</p>
+      <h1 class="co-title">Your Camera <span class="co-title-accent">Counts Calories<span class="co-macro-bar" aria-hidden="true"><i></i><i></i><i></i></span></span></h1>
+      <p class="co-sub">Snap your meal and AI breaks it into calories, protein, carbs and fat. Packaged food? Scan the barcode or the label.</p>
+      <div class="co-actions"><span class="store-cta is-pending " data-surface="hero"><span class="pending-dot" aria-hidden="true"></span>Coming soon to the App Store</span><a class="co-link" href="#how">How it works</a></div>
+      <ul class="co-facts"><li>Log by photo, barcode or food label</li><li>Fix any ingredient before you save</li><li>Your food log stays on your iPhone</li></ul>
+    </div>
+    <div class="co-hero-visual">
+      <div class="co-frame"><div class="co-viewfinder" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <figure class="phone co-hero-phone"><div class="phone-screen"><img src="assets/screens/meal-result.webp" alt="Calens meal result showing calories, protein, carbs, fat and fiber for one meal" width="660" height="1434" fetchpriority="high" decoding="async"></div></figure></div>
+      <div class="co-readout"><p class="co-readout-kcal"><strong>630</strong> kcal</p><p class="co-readout-head">Share of calories</p><ul><li class="m-protein"><span>Protein <small>57 g</small></span><b>36%</b><i class="co-bar" aria-hidden="true"><i class="co-bar-fill co-w-35"></i></i></li><li class="m-carbs"><span>Carbs <small>56 g</small></span><b>35%</b><i class="co-bar" aria-hidden="true"><i class="co-bar-fill co-w-35"></i></i></li><li class="m-fat"><span>Fat <small>20 g</small></span><b>28%</b><i class="co-bar" aria-hidden="true"><i class="co-bar-fill co-w-30"></i></i></li></ul><p class="co-readout-note">Sample meal from the app’s own result screen</p></div>
+    </div>
+  </div>
+</section>
+<section class="co-summary wrap" aria-labelledby="summary-title">
+  <header class="co-head"><p class="eyebrow">Calens at a glance</p><h2 id="summary-title">What Calens Does, <span class="accent-text">In Plain Words</span></h2></header>
+  <dl class="co-dl"><div class="co-dl-row"><dt>What it is</dt><dd>An iPhone app that turns a photo of your meal into calories and macros, then lets you check every ingredient before it goes into your day.</dd></div><div class="co-dl-row"><dt>Ways to log</dt><dd>Snap a meal photo for an AI breakdown, scan a barcode for packaged food, or read a printed nutrition label right on your iPhone.</dd></div><div class="co-dl-row"><dt>What it tracks</dt><dd>Calories, protein, carbs, fat, fiber, sugar, saturated fat and sodium for every meal, measured against your daily calorie and macro target.</dd></div><div class="co-dl-row"><dt>Progress</dt><dd>Weight against your goal, a day streak and before-and-after photos side by side. Connect Apple Health to add steps, workouts and calories burned.</dd></div><div class="co-dl-row"><dt>You stay in control</dt><dd>See the ingredients the AI found, change an amount or add a hidden one like oil or sauce, and the nutrition values recalculate on the spot. Nothing is saved until you approve it.</dd></div><div class="co-dl-row"><dt>Look back</dt><dd>A day-by-day food diary, saved meals you can add again in a tap, and a PDF report of any period to share.</dd></div><div class="co-dl-row"><dt>Languages</dt><dd>The app is available in 12 languages: English, Arabic, Chinese (Traditional), Dutch, French, German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish and Turkish.</dd></div><div class="co-dl-row"><dt>Platform</dt><dd>iPhone with iOS 17 or later.</dd></div></dl>
+</section>
+<section class="co-how wrap" id="how" aria-labelledby="how-title">
+  <header class="co-head co-head--left"><h2 id="how-title">From Plate to Plan in Three Steps</h2></header>
+  <ol class="co-steps"><li class="co-step co-step--0"><div class="co-step-crop co-crop-scanMeal"><img src="assets/screens/scan-meal.webp" alt="" width="660" height="1434" loading="lazy" decoding="async"></div><div class="co-step-text"><span class="co-step-n">01</span><h3>Snap your meal</h3><p>Frame your plate or pick a photo from your photo library. Add a note like “+olive oil” if you want, then tap Analyze.</p></div></li><li class="co-step co-step--1"><div class="co-step-crop co-crop-result"><img src="assets/screens/meal-result.webp" alt="" width="660" height="1434" loading="lazy" decoding="async"></div><div class="co-step-text"><span class="co-step-n">02</span><h3>Check the ingredients</h3><p>See every ingredient the AI found, with its amount. Change an amount or add one it missed, and the numbers update.</p></div></li><li class="co-step co-step--2"><div class="co-step-crop co-crop-home"><img src="assets/screens/home.webp" alt="" width="660" height="1434" loading="lazy" decoding="async"></div><div class="co-step-text"><span class="co-step-n">03</span><h3>Save it to your day</h3><p>Your calories left and macros eaten update the moment you save.</p></div></li></ol>
+</section>
+<section class="co-bento-sec wrap" id="inside" aria-labelledby="bento-title">
+  <header class="co-head"><p class="eyebrow">Inside the app</p><h2 id="bento-title">Five Screens, <span class="accent-text">One Daily Habit</span></h2></header>
+  <ul class="co-bento co-bento--5"><li class="co-tile co-tile--0 on-dark"><div class="co-tile-text"><h3>Every Macro, Laid Out</h3><p>Protein, carbs, fat, fiber, and more. Adjust the portion, then save.</p></div><figure class="phone co-tile-phone"><div class="phone-screen"><img src="assets/screens/meal-result.webp" alt="Calens meal result showing calories, protein, carbs, fat and fiber for one meal" width="660" height="1434" loading="lazy" decoding="async"></div></figure></li><li class="co-tile co-tile--1"><div class="co-tile-text"><h3>Your Whole Day at a Glance</h3><p>See calories left and macros eaten, plus every meal you logged today.</p></div><figure class="phone co-tile-phone"><div class="phone-screen"><img src="assets/screens/home.webp" alt="Calens home screen with calories left, macros eaten and today&#39;s meals" width="660" height="1434" loading="lazy" decoding="async"></div></figure></li><li class="co-tile co-tile--2"><div class="co-tile-text"><h3>Look Back on Every Meal</h3><p>A day-by-day food diary with calories and macros for each entry.</p></div><figure class="phone co-tile-phone"><div class="phone-screen"><img src="assets/screens/history.webp" alt="Calens food diary listing meals by day with calories and macros" width="660" height="1434" loading="lazy" decoding="async"></div></figure></li><li class="co-tile co-tile--3"><div class="co-tile-text"><h3>See How Far You’ve Come</h3><p>Track weight, goal, and streak, plus before-and-after photos.</p></div><figure class="phone co-tile-phone"><div class="phone-screen"><img src="assets/screens/progress.webp" alt="Calens progress screen with weight, goal and streak" width="660" height="1434" loading="lazy" decoding="async"></div></figure></li><li class="co-tile co-tile--4"><div class="co-tile-text"><h3>A Plan Built Around You</h3><p>A daily calorie and macro target from your details. Adjust it anytime.</p></div><figure class="phone co-tile-phone"><div class="phone-screen"><img src="assets/screens/plan.webp" alt="Calens daily calorie and macro plan" width="660" height="1434" loading="lazy" decoding="async"></div></figure></li></ul>
+</section>
+<section class="co-trust wrap" aria-labelledby="trust-title">
+  <div class="co-trust-copy"><p class="eyebrow">Why Calens</p><h2 id="trust-title">Built to Be <span class="accent-text">Trusted</span></h2>
+    <ul class="co-trust-list"><li><h3>Your food log stays with you</h3><p>Your meals, photos and progress are saved on your iPhone. Calens never asks you to create an account, so you can open the app and start.</p></li><li><h3>Your photo, your call</h3><p>A meal photo leaves your iPhone only when you tap Analyze. It is used for that one analysis, then discarded.</p></li><li><h3>You have the final say</h3><p>AI results are estimates. Change any amount or add what the camera missed before anything is saved.</p></li></ul>
+  </div>
+  <div class="co-label" role="table" aria-label="Privacy Facts"><p class="co-label-title" role="caption">Privacy Facts</p><p class="co-label-sub">Applies to every Calens install</p><div class="co-label-row" role="row"><span role="rowheader">Food log stored</span><b role="cell">On your iPhone</b></div><div class="co-label-row" role="row"><span role="rowheader">Sign-up needed</span><b role="cell">None</b></div><div class="co-label-row" role="row"><span role="rowheader">Meal photo sent for analysis</span><b role="cell">Only when you tap Analyze</b></div><div class="co-label-row" role="row"><span role="rowheader">Meal photo after analysis</span><b role="cell">Discarded</b></div><div class="co-label-row" role="row"><span role="rowheader">Apple Health data</span><b role="cell">Stays on your iPhone</b></div></div>
+</section>
+<section class="co-faq wrap" id="faq" aria-labelledby="faq-title">
+  <aside class="co-faq-side"><p class="eyebrow">FAQ</p><h2 id="faq-title">Your Questions, <span class="accent-text">Straight Answers</span></h2>
+    <div class="co-help"><p>Questions, bugs or data requests? Write to us and include your iPhone model and iOS version.</p><a href="mailto:calens@oda.so">calens@oda.so</a></div>
+  </aside>
+  <div class="co-faq-list"><div class="faq-list"><details class="faq-item" open><summary><span>Which devices does Calens support?</span></summary><p>Calens is made for iPhone and runs on iOS 17 or later.</p></details><details class="faq-item"><summary><span>Which languages does Calens support?</span></summary><p>The app is available in English, Arabic, Chinese (Traditional), Dutch, French, German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish and Turkish. You can switch languages inside the app.</p></details><details class="faq-item"><summary><span>Where are my meals and photos stored?</span></summary><p>On your iPhone. Your profile, meals, photos and progress are saved in the app, not in a Calens account. You can export a copy or delete everything in Settings.</p></details><details class="faq-item"><summary><span>What happens to my meal photo?</span></summary><p>It leaves your iPhone only when you tap Analyze. The photo is sent for that one AI analysis and discarded afterward; it is not stored on a server. Barcode and label scans don’t need a meal photo.</p></details><details class="faq-item"><summary><span>How accurate is the AI?</span></summary><p>It does the heavy lifting, and you have the final say. Results are estimates, not lab measurements. Portions and hidden oil or sauce are the hardest to see, so Calens shows every ingredient it found and lets you change an amount or add what it missed before you save.</p></details><details class="faq-item"><summary><span>Does Calens work with Apple Health?</span></summary><p>Yes, if you turn it on. With your permission, Calens reads active energy, workouts, steps, exercise minutes and weight to show your daily activity and calories burned. It only reads, never writes, and your Health data stays on your iPhone.</p></details><details class="faq-item"><summary><span>Does Calens give medical advice?</span></summary><p>No. Calens helps you log food and follow your own goals. It does not diagnose or treat any condition.</p></details><details class="faq-item"><summary><span>How do I get help?</span></summary><p>Email calens@oda.so and include your iPhone model and iOS version.</p></details></div></div>
+</section>
+<section class="co-end">
+  <div class="wrap co-end-card on-dark">
+    <div class="co-end-copy"><h2>Your Next Meal Is <span class="accent-text">One Photo Away</span></h2><p>Point your camera at your next plate and watch calories, protein, carbs and fat appear.</p><span class="store-cta is-pending co-cta-dark" data-surface="end"><span class="pending-dot" aria-hidden="true"></span>Coming soon to the App Store</span></div>
+    <div class="co-end-ring"><figure class="co-ring-fig"><svg class="ring" viewBox="0 0 200 200" role="img" aria-label="Sample meal: 630 kcal, Protein 57 g, Carbs 56 g, Fat 20 g">
+<circle class="ring-track" cx="100" cy="100" r="84"/><circle class="ring-arc m-protein" cx="100" cy="100" r="84" pathLength="100" stroke-dasharray="33.58 66.42" stroke-dashoffset="0.00"/><circle class="ring-arc m-carbs" cx="100" cy="100" r="84" pathLength="100" stroke-dasharray="32.94 67.06" stroke-dashoffset="-36.08"/><circle class="ring-arc m-fat" cx="100" cy="100" r="84" pathLength="100" stroke-dasharray="25.98 74.02" stroke-dashoffset="-71.52"/>
+<text class="ring-big" x="100" y="104" text-anchor="middle">630</text>
+<text class="ring-sub" x="100" y="130" text-anchor="middle">kcal</text></svg>
+<figcaption><ul class="co-ring-legend"><li class="m-protein"><span>Protein</span><b>57 g</b></li><li class="m-carbs"><span>Carbs</span><b>56 g</b></li><li class="m-fat"><span>Fat</span><b>20 g</b></li></ul><p class="co-ring-cap">Calories and macros from one photo <span>Sample meal</span></p></figcaption></figure></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="wrap">
+<div class="footer-top">
+<div class="footer-brand"><a class="brand " href="/" aria-label="Calens home"><img class="brand-icon" src="assets/icons/app-icon.png" alt="" width="32" height="32"><span class="brand-word">Calens</span></a><p>Snap a meal. See its calories and macros.</p></div>
+<nav class="footer-nav" aria-label="Footer">
+<a href="/features">Features</a>
+
+<a href="/support">Support</a>
+<a href="/privacy">Privacy</a>
+<a href="/terms">Terms</a>
+<a href="/ai-info">AI info</a>
+</nav>
+</div>
+
+<div class="footer-bottom"><p>&copy; 2026 Calens. iPhone app.</p></div>
+</div></footer>
+</body>
 </html>
